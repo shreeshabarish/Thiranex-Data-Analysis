@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thiranex Data Analysis Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background: #17202a;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #d5d8dc;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .section-title {
+            margin: 30px 0 15px;
+            font-size: 24px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .charts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .chart {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .chart h3 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .chart img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .findings {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .findings ul {
+            margin-left: 25px;
+            line-height: 1.9;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: #17202a;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 800px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .charts {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Thiranex Data Analysis Dashboard</h1>
+    <p>Sample Superstore Dataset — Data Cleaning, Analysis & Visualization</p>
+</header>
+
+<div class="container">
+
+    <h2 class="section-title">Key Metrics</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Total Records</h3>
+            <p>9,994</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Columns</h3>
+            <p>21</p>
+        </div>
+
+        <div class="card">
+            <h3>Sales Outliers</h3>
+            <p>1,167</p>
+        </div>
+
+        <div class="card">
+            <h3>Highest Sales Category</h3>
+            <p>Technology</p>
+        </div>
+
+    </div>
+
+
+    <h2 class="section-title">Sales & Profit Analysis</h2>
+
+    <div class="charts">
+
+        <div class="chart">
+            <h3>Sales by Category</h3>
+            <img src="visualizations/sales_by_category.png">
+        </div>
+
+        <div class="chart">
+            <h3>Profit by Category</h3>
+            <img src="visualizations/profit_by_category.png">
+        </div>
+
+        <div class="chart">
+            <h3>Sales and Profit by Category</h3>
+            <img src="visualizations/sales_profit_by_category.png">
+        </div>
+
+        <div class="chart">
+            <h3>Sales by Year</h3>
+            <img src="visualizations/sales_by_year.png">
+        </div>
+
+    </div>
+
+
+    <h2 class="section-title">Data Relationships & Distributions</h2>
+
+    <div class="charts">
+
+        <div class="chart">
+            <h3>Sales vs Profit</h3>
+            <img src="visualizations/sales_vs_profit.png">
+        </div>
+
+        <div class="chart">
+            <h3>Sales Distribution</h3>
+            <img src="visualizations/sales_distribution.png">
+        </div>
+
+        <div class="chart">
+            <h3>Profit Boxplot</h3>
+            <img src="visualizations/profit_boxplot.png">
+        </div>
+
+        <div class="chart">
+            <h3>Sales Boxplot</h3>
+            <img src="visualizations/sales_boxplot.png">
+        </div>
+
+        <div class="chart">
+            <h3>Seaborn Sales by Category</h3>
+            <img src="visualizations/seaborn_sales_by_category.png">
+        </div>
+
+        <div class="chart">
+            <h3>Seaborn Profit by Category</h3>
+            <img src="visualizations/seaborn_profit_by_category.png">
+        </div>
+
+        <div class="chart">
+            <h3>Correlation Heatmap</h3>
+            <img src="visualizations/correlation_heatmap.png">
+        </div>
+
+    </div>
+
+
+    <h2 class="section-title">Key Findings</h2>
+
+    <div class="findings">
+
+        <ul>
+            <li>The dataset contains 9,994 records and 21 columns.</li>
+
+            <li>No missing values were found in the dataset.</li>
+
+            <li>No duplicate rows were found.</li>
+
+            <li>Technology generated the highest total sales.</li>
+
+            <li>Technology also generated the highest total profit.</li>
+
+            <li>Furniture generated high sales but considerably lower profit compared with the other categories.</li>
+
+            <li>The IQR method identified 1,167 potential outliers in the Sales column.</li>
+
+            <li>Sales and Profit had a moderate positive correlation of 0.48.</li>
+
+            <li>Discount and Profit had a weak negative correlation of -0.22.</li>
+
+            <li>Quantity and Profit had a very weak correlation of 0.07.</li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+<footer>
+    <p>Thiranex Data Cleaning & Visualization Project</p>
+    <p>Python | Pandas | NumPy | Matplotlib | Seaborn</p>
+</footer>
+
+</body>
+</html>
